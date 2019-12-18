@@ -57,7 +57,7 @@ public class deneme {
             Assert.assertEquals(expectedMessage, actualMessage);
             System.out.println(actualEmail);
             System.out.println(actualMessage);
-            System.out.println("thankyou");
+            //System.out.println("thankyou");
             driver.quit();
         }
     }
