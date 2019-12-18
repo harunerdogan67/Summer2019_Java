@@ -10,6 +10,8 @@ import org.testng.annotations.Test;
 import utilities.BrowserFactory;
 import utilities.BrowserUtils;
 
+import java.util.Arrays;
+
 public class Homework_3 {
     private WebDriver driver;
 
@@ -105,21 +107,23 @@ public class Homework_3 {
                 "\"//div[@class='calendar-event-organizer']/a\"", "\"//span[@class='list-group-item-text']/a\"",
                 "\"//div[text()='Weekly every 1 week on Wednesday']\"", "\"//label[text()='Call via Hangout']/parent::div/div/div\""};
         // ayse turk ablanin yazdigi xpathler
+        System.out.println(Arrays.toString(xpath));
+        System.out.println("=====================");
 
         String[] expectedResult = {"Testers meeting", "This is a a weekly testers meeting", "Nov 27, 2019, 9:30 AM",
                 "Nov 27, 2019, 10:30 AM", "No", "Stephan Haley", "Tom Smith", "Weekly every 1 week on Wednesday", "No"};
 
-//        for (int i = 0; i < 9; i++) {
-//            System.out.println(xpath[i] +" "+expectedResult[i]);
-//        }
-
         for (int i = 0; i < 9; i++) {
-            BrowserUtils.wait(2);
-            WebElement eleman = driver.findElement(By.xpath(xpath[i]));
-            BrowserUtils.wait(2);
-            Assert.assertEquals(eleman.getText(), expectedResult[i]);
-            System.out.println(eleman.getText());
+            System.out.println(xpath[i] +" "+expectedResult[i]);
         }
+
+//        for (int i = 0; i < 9; i++) {
+//            BrowserUtils.wait(2);
+//            WebElement eleman = driver.findElement(By.xpath(xpath[i]));
+//            BrowserUtils.wait(2);
+//            Assert.assertEquals(eleman.getText(), expectedResult[i]);
+//            System.out.println(eleman.getText());
+//        }
     }
 
 
